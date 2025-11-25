@@ -114,7 +114,7 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 ⎉ 𝖳𝗈𝗍𝖺𝗅 𝖢𝗁𝖺𝗍𝗌: <code>{}</code>
 ⎉ 𝖴𝗌𝖾𝖽 𝖲𝗍𝗈𝗋𝖺𝗀𝖾: <code>{}</code>
 
-<b>😎 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖻𝗒 @GRANDCINEMAS</b>"""
+<b>😎 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖻𝗒 @MazhavilMoviesUpdates</b>"""
 
     LOG_TEXT_G = """#NewGroup
 𝖦𝗋𝗈𝗎𝗉 = {}(<code>{}</code>)
@@ -217,11 +217,11 @@ Name <b>: {}</b>
 Message <b>: {}</b>"""
 
     CAPTION = """
-📂 <em>File Name</em>: <code>@GRANDCINEMAS|{file_name}</code> 
+📂 <em>File Name</em>: <code>@MazhavilMoviesUpdates|{file_name}</code> 
 
 🖇 <em>File Size</em>: <code>{file_size}</code> 
 
-❤️‍🔥 </i>Join</i> [@GRANDCINEMAS](https://t.me/grandcinemasS)  
+❤️‍🔥 </i>Join</i> [⚙Lᴀᴛᴇsᴛ Mᴏᴠɪᴇ Rᴇʟᴇᴀsᴇs⚙](https://t.me/+y8t9EhzOFTBlNTRl)  
 """
 
     IMDB_TEMPLATE_TXT = """
@@ -229,7 +229,7 @@ Message <b>: {}</b>"""
 🔮 𝖸𝖾𝖺𝗋: {year} \n⭐️ 𝖱𝖺𝗍𝗂𝗇𝗀𝗌: {rating}/ 10  
 🎭 𝖦𝖾𝗇𝖾𝗋𝗌: {genres} 
 
-🎊 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 [[@GRANDCINEMAS]](https://t.me/grandcinemas)"""
+🎊 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 [[⚙Lᴀᴛᴇsᴛ Mᴏᴠɪᴇ Rᴇʟᴇᴀsᴇs⚙]](https://t.me/+y8t9EhzOFTBlNTRl)"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""

@@ -6,11 +6,11 @@ CMD = ["/", "."]
 
 @Client.on_message(filters.command("alive", CMD))
 async def check_alive(_, message):
-    await message.reply_text("𝖡𝗎𝖽𝖽𝗒 𝖨𝖺𝗆 𝖠𝗅𝗂𝗏𝖾 :) 𝖧𝗂𝗍 /start \n\n𝖧𝗂𝗍 /help 𝖥𝗈𝗋 𝖧𝖾𝗅𝗉 ;)\n\n\n𝖧𝗂𝗍 /ping 𝖳𝗈 𝖢𝗁𝖾𝖼𝗄 𝖡𝗈𝗍 𝖯𝗂𝗇𝗀 😁")
+    await message.reply_text("Yᴏᴜ ᴀʀᴇ ᴠᴇʀʏ ʟᴜᴄᴋʏ 🤞 I ᴀᴍ ᴀʟɪᴠᴇ ❤️ Pʀᴇꜱꜱ /Start ᴛᴏ ᴜꜱᴇ ᴍᴇ 𝖧𝗂𝗍 /Help 𝖥𝗈𝗋 𝖧𝖾𝗅𝗉 ⚡")
 
 @Client.on_message(filters.command("help", CMD))
 async def help(_, message):
-    await message.reply_text("𝖧𝗂𝗍 /movie 𝖥𝗈𝗋 𝖬𝗈𝗏𝗂𝖾 𝖲𝖾𝖺𝗋𝖼𝗁 𝖱𝗎𝗅𝖾𝗌 📃\n\n𝖧𝗂𝗍 /series 𝖥𝗈𝗋 𝖲𝖾𝗋𝗂𝖾𝗌 𝖲𝖾𝖺𝗋𝖼𝗁 𝖱𝗎𝗅𝖾𝗌 📃\n\n\n𝖧𝗂𝗍 /tutorial 𝖥𝗈𝗋 𝖯𝗋𝗈𝗉𝖾𝗋 𝖳𝗎𝗍𝗈𝗋𝗂𝖺𝗅 𝖵𝗂𝖽𝖾𝗈𝗌 🤗")
+    await message.reply_text("❗️How to Search Movies Here❓▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬1. Just Send Movie Name and Movie Released Year Correctly.(Check Google for Correct Movie Spelling and Movie Released Year)Examples: -Oppam 2016Baahubali 2015 1080p(For Getting only 1080p Quality Files)▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬Baahubali 2015 MalayalamBaahubali 2015 Tamil(For Dubbed Movie Files)▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬❗️On Android, Better Use VLC Media Player For Watch Movie's.▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
 
 @Client.on_message(filters.command("movie", CMD))
 async def movie(_, message):
@@ -31,6 +31,7 @@ async def ping(_, message):
     end_t = time.time()
     time_taken_s = (end_t - start_t) * 1000
     await rm.edit(f"𝖯𝗂𝗇𝗀!\n{time_taken_s:.3f} ms")
+
 
 
 

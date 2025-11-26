@@ -6,7 +6,7 @@ CMD = ["/", "."]
 
 @Client.on_message(filters.command("alive", CMD))
 async def check_alive(_, message):
-    await message.reply_text("Yᴏᴜ ᴀʀᴇ ᴠᴇʀʏ ʟᴜᴄᴋʏ 🤞 I ᴀᴍ ᴀʟɪᴠᴇ ❤️ Pʀᴇꜱꜱ /Start ᴛᴏ ᴜꜱᴇ ᴍᴇ 𝖧𝗂𝗍 /Help 𝖥𝗈𝗋 𝖧𝖾𝗅𝗉 ⚡")
+    await message.reply_text("Yᴏᴜ ᴀʀᴇ ᴠᴇʀʏ ʟᴜᴄᴋʏ 🤞 I ᴀᴍ ᴀʟɪᴠᴇ ❤️ Pʀᴇꜱꜱ /Start ᴛᴏ ᴜꜱᴇ ᴍᴇ\n\n𝖧𝗂𝗍 /Help 𝖥𝗈𝗋 𝖧𝖾𝗅𝗉 ⚡")
 
 @Client.on_message(filters.command("help", CMD))
 async def help(_, message):
@@ -31,6 +31,7 @@ async def ping(_, message):
     end_t = time.time()
     time_taken_s = (end_t - start_t) * 1000
     await rm.edit(f"𝖯𝗂𝗇𝗀!\n{time_taken_s:.3f} ms")
+
 
 
 

@@ -10,7 +10,7 @@ async def check_alive(_, message):
 
 @Client.on_message(filters.command("help", CMD))
 async def help(_, message):
-    await message.reply_text("<b>❗️𝗛𝗼𝘄 𝘁𝗼 𝗦𝗲𝗮𝗿𝗰𝗵 𝗠𝗼𝘃𝗶𝗲𝘀 𝗛𝗲𝗿𝗲❓<b>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬𝟭. 𝗝𝘂𝘀𝘁 𝗦𝗲𝗻𝗱 𝗠𝗼𝘃𝗶𝗲 𝗡𝗮𝗺𝗲 𝗮𝗻𝗱 𝗠𝗼𝘃𝗶𝗲 𝗥𝗲𝗹𝗲𝗮𝘀𝗲𝗱 𝗬𝗲𝗮𝗿 𝗖𝗼𝗿𝗿𝗲𝗰𝘁𝗹𝘆.<blockquote>(𝗖𝗵𝗲𝗰𝗸 𝗚𝗼𝗼𝗴𝗹𝗲 𝗳𝗼𝗿 𝗖𝗼𝗿𝗿𝗲𝗰𝘁 𝗠𝗼𝘃𝗶𝗲 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 𝗮𝗻𝗱 𝗠𝗼𝘃𝗶𝗲 𝗥𝗲𝗹𝗲𝗮𝘀𝗲𝗱 𝗬𝗲𝗮𝗿)<blockquote> \n\n𝗘𝘅𝗮𝗺𝗽𝗹𝗲𝘀:- \n\n𝗢𝗽𝗽𝗮𝗺 𝟮𝟬𝟭𝟲 \n\n𝗕𝗮𝗮𝗵𝘂𝗯𝗮𝗹𝗶 𝟮𝟬𝟭𝟱 𝟭𝟬𝟴𝟬𝗽. <blockquote>(𝗙𝗼𝗿 𝗚𝗲𝘁𝘁𝗶𝗻𝗴 𝗼𝗻𝗹𝘆 𝟭𝟬𝟴𝟬𝗽 𝗤𝘂𝗮𝗹𝗶𝘁𝘆 𝗙𝗶𝗹𝗲𝘀)<blockquote> ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬  \n\n𝗕𝗮𝗮𝗵𝘂𝗯𝗮𝗹𝗶 𝟮𝟬𝟭𝟱 𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺  \n\n𝗕𝗮𝗮𝗵𝘂𝗯𝗮𝗹𝗶 𝟮𝟬𝟭𝟱 𝗧𝗮𝗺𝗶𝗹 <blockquote>(𝗙𝗼𝗿 𝗗𝘂𝗯𝗯𝗲𝗱 𝗠𝗼𝘃𝗶𝗲 𝗙𝗶𝗹𝗲𝘀)<blockquote> ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ❗️𝗢𝗻 𝗔𝗻𝗱𝗿𝗼𝗶𝗱, 𝗕𝗲𝘁𝘁𝗲𝗿 𝗨𝘀𝗲 𝗩𝗟𝗖 𝗠𝗲𝗱𝗶𝗮 𝗣𝗹𝗮𝘆𝗲𝗿 𝗙𝗼𝗿 𝗪𝗮𝘁𝗰𝗵 𝗠𝗼𝘃𝗶𝗲'𝘀. ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬<b>")
+    await message.reply_text("<b>❗️How to Search Movies Here❓</b>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬<b>1.</b> Just send the <b>Movie Name</b> and <b>Movie Released Year</b> correctly.  <blockquote>(Check Google for correct movie spelling and release year)</blockquote><b>Examples:</b>  Oppam 2016  Baahubali 2015 1080p  <blockquote>(For getting only 1080p quality files)</blockquote>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬<b>Dubbed Movies:</b>  Baahubali 2015 Malayalam  Baahubali 2015 Tamil  <blockquote>(For dubbed movie files)</blockquote>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬❗️ On Android, better use <b>VLC Media Player</b> to watch movies.  ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
 
 @Client.on_message(filters.command("movie", CMD))
 async def movie(_, message):
@@ -31,6 +31,7 @@ async def ping(_, message):
     end_t = time.time()
     time_taken_s = (end_t - start_t) * 1000
     await rm.edit(f"𝖯𝗂𝗇𝗀!\n{time_taken_s:.3f} ms")
+
 
 
 

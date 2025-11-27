@@ -240,10 +240,10 @@ async def next_page(bot, query):
                     ],
                                 )
     btn.insert(0, [
-        InlineKeyboardButton(f'🖥Oᴛᴛ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ🖥', url='https://t.me/+qYhaDTohl9I1YWY1')
+        InlineKeyboardButton(f'🎬 {search} 🎬', 'rkbtn')
     ])
     btn.insert(2, [
-        InlineKeyboardButton('⚙Lᴀᴛᴇsᴛ Mᴏᴠɪᴇ Rᴇʟᴇᴀsᴇs⚙', url'https://t.me/+y8t9EhzOFTBlNTRl')
+        InlineKeyboardButton("📤 𝖲𝖾𝗇𝖽 𝖠𝗅𝗅 𝖥𝗂𝗅𝖾𝗌 📤", callback_data=f"send_all#{req}#{key}#{pre}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -1342,10 +1342,10 @@ async def auto_filter(client, msg, spoll=False):
             
                       
     btn.insert(0, [
-        InlineKeyboardButton(f'🖥Oᴛᴛ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ🖥', url='https://t.me/+qYhaDTohl9I1YWY1')
+        InlineKeyboardButton(f'🎬 {search} 🎬', 'rkbtn')
     ])
     btn.insert(2, [
-        InlineKeyboardButton('⚙Lᴀᴛᴇsᴛ Mᴏᴠɪᴇ Rᴇʟᴇᴀsᴇs⚙', url='https://t.me/+y8t9EhzOFTBlNTRl')
+        InlineKeyboardButton("📤 𝖲𝖾𝗇𝖽 𝖠𝗅𝗅 𝖥𝗂𝗅𝖾𝗌 📤", callback_data=f"send_all#{req}#{key}#{pre}")
     ])
 
     if offset != "":

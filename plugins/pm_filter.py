@@ -243,7 +243,7 @@ async def next_page(bot, query):
         InlineKeyboardButton(f'🖥Oᴛᴛ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ🖥', url='https://t.me/+qYhaDTohl9I1YWY1')
     ])
     btn.insert(2, [
-        InlineKeyboardButton("⚙Lᴀᴛᴇsᴛ Mᴏᴠɪᴇ Rᴇʟᴇᴀsᴇs⚙", url'https://t.me/+y8t9EhzOFTBlNTRl')
+        InlineKeyboardButton('⚙Lᴀᴛᴇsᴛ Mᴏᴠɪᴇ Rᴇʟᴇᴀsᴇs⚙', url'https://t.me/+y8t9EhzOFTBlNTRl')
     ])
     try:
         await query.edit_message_reply_markup(
@@ -1345,7 +1345,7 @@ async def auto_filter(client, msg, spoll=False):
         InlineKeyboardButton(f'🖥Oᴛᴛ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ🖥', url='https://t.me/+qYhaDTohl9I1YWY1')
     ])
     btn.insert(2, [
-        InlineKeyboardButton("⚙Lᴀᴛᴇsᴛ Mᴏᴠɪᴇ Rᴇʟᴇᴀsᴇs⚙", url='https://t.me/+y8t9EhzOFTBlNTRl')
+        InlineKeyboardButton('⚙Lᴀᴛᴇsᴛ Mᴏᴠɪᴇ Rᴇʟᴇᴀsᴇs⚙', url='https://t.me/+y8t9EhzOFTBlNTRl')
     ])
 
     if offset != "":

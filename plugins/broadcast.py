@@ -3,63 +3,96 @@ import datetime
 import time
 from database.users_chats_db import db
 from info import ADMINS
-from utils import broadcast_messages, broadcast_messages_group
+from utils import broadcast_messages
 import asyncio
-        
+
+# =============================
+# ⚙️ CONFIGURATION
+# =============================
+BROADCAST_BATCH_SIZE = 500  # Process 500 users at a time
+BROADCAST_SLEEP = 1         # Delay to avoid flood limits
+
+
+# =============================
+# 🚀 BROADCAST HANDLER
+# =============================
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
-async def verupikkals(bot, message):
+async def broadcast(bot, message):
+    """Admin-only broadcast command that sends the replied message to all users."""
+
     users = await db.get_all_users()
     b_msg = message.reply_to_message
-    sts = await message.reply_text(
-        text='Broadcasting your messages...'
-    )
+
+    # ⏳ Initial broadcast message
+    sts = await message.reply_text("📢 **Broadcast Started!**\n\n🕒 Preparing messages...")
+
     start_time = time.time()
     total_users = await db.total_users_count()
-    done = 0
-    blocked = 0
-    deleted = 0
-    failed =0
 
-    success = 0
-    async for user in users:
-        pti, sh = await broadcast_messages(int(user['id']), b_msg)
+    done, blocked, deleted, failed, success = 0, 0, 0, 0, 0
+
+    # ==================================
+    # 📬 Internal function to send message
+    # ==================================
+    async def send_message(user):
+        nonlocal success, blocked, deleted, failed
+
+        user_id = int(user["id"])
+        pti, status = await broadcast_messages(user_id, b_msg)
+
         if pti:
             success += 1
-        elif pti == False:
-            if sh == "Blocked":
-                blocked+=1
-            elif sh == "Deleted":
+        else:
+            if status == "Blocked":
+                blocked += 1
+                await db.delete_user(user_id)
+            elif status == "Deleted":
                 deleted += 1
-            elif sh == "Error":
+                await db.delete_user(user_id)
+            else:
                 failed += 1
-        done += 1
-        await asyncio.sleep(2)
-        if not done % 20:
-            await sts.edit(f"Broadcast in progress:\n\nTotal Users {total_users}\nCompleted: {done} / {total_users}\nSuccess: {success}\nBlocked: {blocked}\nDeleted: {deleted}")    
-    time_taken = datetime.timedelta(seconds=int(time.time()-start_time))
-    await sts.edit(f"Broadcast Completed:\nCompleted in {time_taken} seconds.\n\nTotal Users {total_users}\nCompleted: {done} / {total_users}\nSuccess: {success}\nBlocked: {blocked}\nDeleted: {deleted}")
 
-@Client.on_message(filters.command("group_broadcast") & filters.user(ADMINS) & filters.reply)
-async def broadcast_group(bot, message):
-    groups = await db.get_all_chats()
-    b_msg = message.reply_to_message
-    sts = await message.reply_text(
-        text='Broadcasting your messages To Groups...'
-    )
-    start_time = time.time()
-    total_groups = await db.total_chat_count()
-    done = 0
-    failed =0
-
-    success = 0
-    async for group in groups:
-        pti, sh = await broadcast_messages_group(int(group['id']), b_msg)
-        if pti:
-            success += 1
-        elif sh == "Error":
-                failed += 1
+    # =============================
+    # 🔁 Broadcasting Loop
+    # =============================
+    tasks = []
+    async for user in users:
+        tasks.append(send_message(user))
         done += 1
-        if not done % 20:
-            await sts.edit(f"Broadcast in progress:\n\nTotal Groups {total_groups}\nCompleted: {done} / {total_groups}\nSuccess: {success}")    
-    time_taken = datetime.timedelta(seconds=int(time.time()-start_time))
-    await sts.edit(f"Broadcast Completed:\nCompleted in {time_taken} seconds.\n\nTotal Groups {total_groups}\nCompleted: {done} / {total_groups}\nSuccess: {success}")
+
+        # 🧩 Process batch
+        if len(tasks) >= BROADCAST_BATCH_SIZE:
+            await asyncio.gather(*tasks)
+            tasks = []
+
+            await sts.edit_text(
+                f"📣 **Broadcast Progress**\n\n"
+                f"👥 Total Users: `{total_users}`\n"
+                f"✅ Completed: `{done}` / `{total_users}`\n\n"
+                f"📬 Sent: `{success}`\n"
+                f"🚫 Blocked: `{blocked}`\n"
+                f"🗑️ Deleted: `{deleted}`\n"
+                f"⚠️ Failed: `{failed}`\n\n"
+                f"⏳ Please wait... Sending next batch 🔄"
+            )
+
+            await asyncio.sleep(BROADCAST_SLEEP)
+
+    # Process any remaining tasks
+    if tasks:
+        await asyncio.gather(*tasks)
+
+    # =============================
+    # 🏁 Final Report
+    # =============================
+    time_taken = datetime.timedelta(seconds=int(time.time() - start_time))
+    await sts.edit_text(
+        f"✅ **Broadcast Completed Successfully!**\n\n"
+        f"🕓 Time Taken: `{time_taken}`\n"
+        f"👥 Total Users: `{total_users}`\n\n"
+        f"📬 Success: `{success}`\n"
+        f"🚫 Blocked: `{blocked}`\n"
+        f"🗑️ Deleted: `{deleted}`\n"
+        f"⚠️ Failed: `{failed}`\n\n"
+        f"🎉 All done! Thank you for your patience 💪"
+        )

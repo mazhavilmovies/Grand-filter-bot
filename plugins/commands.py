@@ -18,6 +18,11 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
+FOLLOW_UP_TXT = (
+    "<b><blockquote>❗️Send Movie Name and Year Correctly 👍</blockquotez></b>\n\n"
+    "<b><blockquote>📌 മൂവിയുടെ പേര്, വർഷം എഴുതി അയക്കുക 👍</blockquote></b>"
+)
+
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:

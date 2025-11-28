@@ -10,7 +10,26 @@ async def check_alive(_, message):
 
 @Client.on_message(filters.command("help", CMD))
 async def help(_, message):
-    await message.reply_text("<b>❗️How to Search Movies Here❓</b>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬<b>1.</b> Just send the <b>Movie Name</b> and <b>Movie Released Year</b> correctly.  <blockquote>(Check Google for correct movie spelling and release year)</blockquote><b>Examples:</b> <b>Oppam 2016<b>  <b>Baahubali 2015 1080p<b> <blockquote>(For getting only 1080p quality files)</blockquote>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬<b>Dubbed Movies:</b>  <b>Baahubali 2015 Malayalam<b>  <b>Baahubali 2015 Tamil<b>  <blockquote>(For dubbed movie files)</blockquote>▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬❗️ On Android, better use <b>VLC Media Player</b> to watch movies. ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+    await message.reply_text("❗️How to Search Movies Here❓ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+1. Just Send Movie Name and Movie Released Year Correctly.
+(Check Google for Correct Movie Spelling and Movie Released Year) 
+
+Examples: - 
+Oppam 2016
+Baahubali 2015
+
+Oppam 2016 1080p
+Baahubali 2015 1080p
+(For Getting only 1080p Quality Files)
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Baahubali 2015 Malayalam 
+Baahubali 2015 Tamil 
+(For Dubbed Movie Files)
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+❗️On Android, Better Use <a href=https://play.google.com/store/apps/details?id=org.videolan.vlc> VLC Media Player </a> For Watch Movie's.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Cᴏɴᴛᴀᴄᴛ Bᴏᴛ Dᴇᴠᴇʟᴏᴘᴇʀ (Oʀ) Rᴇᴘᴏʀᴛ Bᴜɢꜱ..!! 👉 @MazhavilAdminBot"""")
 
 @Client.on_message(filters.command("movie", CMD))
 async def movie(_, message):
@@ -31,6 +50,7 @@ async def ping(_, message):
     end_t = time.time()
     time_taken_s = (end_t - start_t) * 1000
     await rm.edit(f"𝖯𝗂𝗇𝗀!\n{time_taken_s:.3f} ms")
+
 
 
 

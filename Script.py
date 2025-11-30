@@ -242,7 +242,12 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
 
     CUSTOM_FILE_CAPTION = """<b>📂Fɪʟᴇɴᴀᴍᴇ : {file_name}
     
-FɪʟᴇSɪᴢᴇ : {file_size}</b>"""
+FɪʟᴇSɪᴢᴇ : {file_size}</b>
+╔════•✧❅✦❅✧•════╗
+➲ [OTTUpdates1TG](https://t.me/+NE3VMORHtoU3OWU1)
+➲ [BotUpdateChannel](https://t.me/+nNYtDOOW1kwxYjg1)
+➲ [LatestMovieRelease](https://t.me/+5xjplvJC1IIyZTdl)
+╚════•✧❅✦❅✧•════╝"""
 
     RESTART_TXT = """
 <b>𝖡𝗈𝗍 𝖱𝖾𝗌𝗍𝖺𝗋𝗍𝖾𝖽 !</b>
